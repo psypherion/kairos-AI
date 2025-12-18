@@ -76,6 +76,7 @@ class YtSearch:
         queries = self.queries()
         for query in bar(queries, total=len(queries)):
             results = self.search(query["query"])
+            print(results)
             info = {}
             for i in results:
                 info[i["id"]] = {
