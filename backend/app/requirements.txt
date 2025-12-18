@@ -7,3 +7,7 @@ python-dotenv
 yt-dlp
 python-youtube
 tqdm
+youtube-transcript-api
+assemblyai
+faster-whisper
+torch
