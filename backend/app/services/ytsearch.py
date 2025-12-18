@@ -75,10 +75,24 @@ class YtSearch:
         queries = self.queries()
         for query in queries:
             results = self.search(query["query"])
-            # print(results)
-            os.makedirs(f"./data/{self.USER_ID}", exist_ok=True)
-            with open(f"./data/{self.USER_ID}/{query['query_index']}.json", "w") as f:
-                json.dump(results, f)
+            info = {}
+            for i in results:
+                info[i["id"]] = {
+                    "title": i["title"],
+                    "url": i["url"],
+                    "description": i["description"],
+                    "duration": i["duration"],
+                    "channel": i["channel"],
+                    "channel_url": i["channel_url"],
+                    "uploader": i["uploader"],
+                    "uploader_url": i["uploader_url"],
+                    "view_count": i["view_count"]
+                }
+
+                # store the info dictionary in a json file
+                os.makedirs(f"./data/{self.USER_ID}", exist_ok=True)
+                with open(f"./data/{self.USER_ID}/{query['query_index']}.json", "w") as f:
+                    json.dump(info, f)
 
 if __name__ == "__main__":
     user_goal_context: str = input("Enter the user goal context: ")
