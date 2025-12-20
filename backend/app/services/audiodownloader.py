@@ -11,11 +11,11 @@ class AudioDownloader:
             'postprocessors': [{
                 'key': 'FFmpegExtractAudio',
                 'preferredcodec': 'mp3',
-                'preferredquality': '0',  # Best quality
+                'preferredquality': '0',
             }],
         }
-    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-        ydl.download([url])
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            ydl.download([url])
 
 if __name__ == "__main__":
     user_id = ""

@@ -208,3 +208,8 @@ __marimo__/
 /data
 
 backend/app/services/data
+.DS_Store
+backend/app/services/data
+backend/app/services/token.pickle
+backend/app/services/client-secret.json
+backend/app/services/audio.mp3
