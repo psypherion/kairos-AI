@@ -93,8 +93,9 @@ class YtSearch:
 
             # store the info dictionary in a json file
             os.makedirs(f"./data/{self.USER_ID}", exist_ok=True)
-            with open(f"./data/{self.USER_ID}/{query['topic_title']}.json", "w") as f:
+            with open(f"./data/{self.USER_ID}/{query['topic_title'].replace('/', '_')}.json", "w") as f:
                 json.dump(info, f)
+        return f"./data/{self.USER_ID}"
 
 if __name__ == "__main__":
     user_goal_context: str = input("Enter the user goal context: ")
